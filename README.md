@@ -10,7 +10,7 @@ You can find a summary of the API documentation [here](https://environment.data.
 
 ## Test Objectives
 
-- A request to test the limit parameter for rainfall measurements for an individual station [  ]
+- A request to test the limit parameter for rainfall measurements for an individual station [x]
 
 - A request to test the date parameter for rainfall measurements for an individual station [  ]
 
