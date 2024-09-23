@@ -18,7 +18,8 @@ You can find a summary of the API documentation [here](https://environment.data.
 
 1. Clone the repository.
 2. Open the project in your preferred .NET IDE (e.g., Visual Studio).
-3. Run the test suite directly to validate functionality.
+3. Clean and build the solution
+4. Run the test suite directly via the commandline using `dotnet test` or yjr visual studio test explorer to validate functionality.
 
 ## Future Considerations (If I Had More Time)
 
