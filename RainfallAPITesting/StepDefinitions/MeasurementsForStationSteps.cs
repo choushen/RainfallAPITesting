@@ -17,6 +17,7 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
         private RestRequest? request;
         private RestResponse? response;
 
+
         // Inject ScenarioContext via constructor
         public MeasurementsForStationSteps(ScenarioContext scenarioContext)
         {
@@ -30,6 +31,7 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
             client = new RestClient("http://environment.data.gov.uk/flood-monitoring/id/stations");
         }
 
+
         [When(@"I request rainfall measurements for station ""(.*)"" with a limit of ""(.*)""")]
         public void WhenIRequestRainfallMeasurementsForStationWithALimitOf(string stationId, string limit)
         {
@@ -38,6 +40,7 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
             request = new RestRequest(endpoint, Method.Get);
             request.AddQueryParameter("_limit", $"{limit}");
         }
+
 
         [Then(@"I should receive no more than ""(.*)"" measurements")]
         public void ThenIShouldReceiveNoMoreThanMeasurements(string limit)
@@ -57,6 +60,7 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
             Assert.That(items.Count, Is.EqualTo(int.Parse(limit)));
         }
 
+
         [When(@"I request rainfall measurements for station ""(.*)"" on date ""(.*)""")]
         public void WhenIRequestRainfallMeasurementsForStationOnDate(string stationId, string date)
         {
@@ -68,6 +72,7 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
             request = new RestRequest(endpoint, Method.Get);
             request.AddQueryParameter("date", $"{date}");
         }
+
 
         [Then(@"I should receive the rainfall measurements for that date only")]
         public void ThenIShouldReceiveTheRainfallMeasurementsForThatDateOnly()
@@ -100,9 +105,8 @@ namespace rainfallapitesting.RainfallAPITesting.StepDefinitions
                 Assert.That(formattedParsedDate, Is.EqualTo(expectedDate), $"Unexpected date found: {formattedParsedDate}");
             }
 
-
-
         }
 
-    }
-}
+    } // end of class
+
+} // end of namespace
