@@ -9,5 +9,5 @@ Scenario: Test the limit parameter for rainfall measurements for an individual s
 
 Scenario: Test the date parameter for rainfall measurements for an individual station
     Given I have the rainfall API endpoint
-    When I request rainfall measurements for station "E7050" on date "01-01-2024"
+    When I request rainfall measurements for station "E7050" on date "2024-09-22"
     Then I should receive the rainfall measurements for that date only
